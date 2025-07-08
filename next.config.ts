@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'standalone',
+  experimental: {
+    // Improve performance for Docker builds
+    optimizePackageImports: ['@reown/appkit', '@stripe/stripe-js']
+  }
 };
 
 export default nextConfig;

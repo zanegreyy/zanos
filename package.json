@@ -6,7 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:build": "docker build -t zanos .",
+    "docker:dev": "docker-compose up app",
+    "docker:prod": "docker-compose --profile production up app-prod",
+    "docker:down": "docker-compose down",
+    "docker:clean": "docker-compose down --volumes --remove-orphans && docker system prune -f"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.56.0",
